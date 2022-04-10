@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one{
+            background-color: gold;
+            color: aliceblue;
+        }
+        #two{
+            background-color: darkcyan;
+            color: aliceblue;
+        }
+        #three{
+            background-color: red;
+            color: aliceblue;
+        }
+        #output{
+            background-color:cadetblue ;
+        }
+        input[type="button"]{
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+            width: 100%;
+        }
+        input[type="text"]{
+            border: 2px solid black;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 style="text-align: center;">calculator</h1>
+    <table border="1px">
+
+        <tr>
+            <td colspan="3"><input type="text" id="output"></td>
+            <td><input id="three" type="button" value="c" onclick="clr()"></td>
+        </tr>
+        <tr>
+            <td ><input type="button" value="7" onclick="view('7')"></td>
+            <td><input type="button" value="8" onclick="view('8')"></td>
+            <td><input type="button" value="9" onclick="view('9')"></td>
+            <td><input id="one" type="button" value="/" onclick="view('/')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="view('4')"></td>
+            <td><input type="button" value="5" onclick="view('5')"></td>
+            <td><input type="button" value="6" onclick="view('6')"></td>
+            <td><input id="one" type="button" value="*" onclick="view('*')"></td>
+            
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="view('1')"></td>
+            <td><input type="button" value="2" onclick="view('2')"></td>
+            <td><input type="button" value="3" onclick="view('3')"></td>
+            <td><input id="one" type="button" value="-" onclick="view('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" onclick="view('0')"></td>
+            <td><input type="button" value="." onclick="view('.')"></td>
+            <td><input id="two" type="button" value="=" onclick="calculate()"></td>
+            <td><input id="one" type="button" value="+" onclick="view('+')"></td>
+        </tr>
+    </table>
+    <script>
+        function view(num){
+            document.getElementById("output").value+=num
+        }
+        function calculate(){
+            let x=document.getElementById("output").value
+            let y=eval(x)
+            document.getElementById("output").value=y
+        }
+        function clr(){
+            document.getElementById("output").value=""
+        }
+    </script>
+</body>
+</html>
